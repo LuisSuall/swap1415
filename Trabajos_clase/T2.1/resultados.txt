@@ -1,0 +1,75 @@
+Componente: Web
+	Replicas: 1.0
+	Disponibilidad: 0.85
+Componente: Web
+	Replicas: 2.0
+	Disponibilidad: 0.9775
+Componente: Web
+	Replicas: 3.0
+	Disponibilidad: 0.996625
+-----------------------------------------
+Componente: Application
+	Replicas: 1.0
+	Disponibilidad: 0.9
+Componente: Application
+	Replicas: 2.0
+	Disponibilidad: 0.99
+Componente: Application
+	Replicas: 3.0
+	Disponibilidad: 0.999
+-----------------------------------------
+Componente: Database
+	Replicas: 1.0
+	Disponibilidad: 0.999
+Componente: Database
+	Replicas: 2.0
+	Disponibilidad: 0.999999
+Componente: Database
+	Replicas: 3.0
+	Disponibilidad: 0.999999999
+-----------------------------------------
+Componente: DNS
+	Replicas: 1.0
+	Disponibilidad: 0.98
+Componente: DNS
+	Replicas: 2.0
+	Disponibilidad: 0.9996
+Componente: DNS
+	Replicas: 3.0
+	Disponibilidad: 0.999992
+-----------------------------------------
+Componente: Firewall
+	Replicas: 1.0
+	Disponibilidad: 0.85
+Componente: Firewall
+	Replicas: 2.0
+	Disponibilidad: 0.9775
+Componente: Firewall
+	Replicas: 3.0
+	Disponibilidad: 0.996625
+-----------------------------------------
+Componente: Switch
+	Replicas: 1.0
+	Disponibilidad: 0.99
+Componente: Switch
+	Replicas: 2.0
+	Disponibilidad: 0.9999
+Componente: Switch
+	Replicas: 3.0
+	Disponibilidad: 0.999999
+-----------------------------------------
+Componente: Data Center
+	Replicas: 1.0
+	Disponibilidad: 0.9999
+-----------------------------------------
+Componente: ISP
+	Replicas: 1.0
+	Disponibilidad: 0.95
+Componente: ISP
+	Replicas: 2.0
+	Disponibilidad: 0.9975
+Componente: ISP
+	Replicas: 3.0
+	Disponibilidad: 0.999875
+-----------------------------------------
+Disponibilidad final del sistema: 0.992035951921
