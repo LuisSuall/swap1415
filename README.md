@@ -7,5 +7,7 @@ Repositorio para la entrega de prácticas y ejercicios de la asignatura SWAP, cu
 #### Carpetas
 *    __Practicas:__
 Entregas de prácticas.
-*    __Trabajos_clase:__
-Entregas de ejercicios y trabajos realizados en la parte de teoría. 
+*    __Preguntas_teoria:__
+Entregas de ejercicios de la parte de teoría. 
+*    __Preguntas_test:__
+Entregas de las preguntas tipo test. 
