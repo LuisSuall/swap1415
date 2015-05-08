@@ -26,17 +26,15 @@ Ahora vamos a pasar a copiar los datos que hemos pasado al fichero sql dentro de
 
 ![Captura 5](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/transferenciaDatosBD.png)
 
-Vamos a pasar a continuación a crear una base da datos en la máquina esclavo cargada con los datos que hemos importado desde la maestro:
+Vamos a pasar a continuación a crear una base de datos en la máquina esclavo donde cargaremos los datos que hemos importado desde la maestro.
 
-![Captura 6](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/creacionBDEsclava.png)
-
-Hemos creado del mismo modo que antes una base de datos llamada Contactos y luego hemos cargado los datos importados con la sentencia:
+Primero hemos creado, del mismo modo que antes, una base de datos llamada Contactos y luego hemos cargado los datos importados con la sentencia:
 
 `mysql -u root -p contactos < /root/contactosdb.sql`
 
-y podemos ver que todo ha funcionado correctamente mostrando los datos que hemos cargado en la esclava:
+Podemos ver que todo ha funcionado correctamente mostrando los datos que hemos cargado en la máquina esclava:
 
-![Captura 7](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/comprobacionCopia.png)
+![Captura 6](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/comprobacionCopia.png)
 
 ##Replicación de BD mediante una configuración maestro-esclavo
 
@@ -49,32 +47,32 @@ Para ello, primero modificamos el archivo `/etc/mysql/my.cnf` generado por defec
 
 Y tras esto, guardamos los cambios y reiniciamos el servicio:
 
-![Captura 8](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/reinicioTrasConfMaestro.png)
+![Captura 7](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/reinicioTrasConfMaestro.png)
 
 Realizamos el mismo proceso con el servidor esclavo, pero asignandole un identificador de servidor distinto, el 2, por ejemplo. Guardamos los cambios y también lo reiniciamos:
 
-![Captura 9](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/reinicioTrasConfEsclavo.png)
+![Captura 8](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/reinicioTrasConfEsclavo.png)
 
 Volvemos a la máquina maestra, y creamos en mysql un nuevo usuario, y le damos permisos de replicación:
 
-![Captura 10](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/userEsclavo.png)
+![Captura 9](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/userEsclavo.png)
 
 Y tras esto realizamos, en la misma máquina, la siguiente sentencia:
 
-![Captura 11](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/masterStatus.png)
+![Captura 10](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/masterStatus.png)
 
 Ahora, volvemos a la máquina esclava, para configurar el uso de la cuenta que acabamos de crear:
 
-![Captura 12](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/datosEsclavo.png)
+![Captura 11](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/datosEsclavo.png)
 
 Desbloqueamos las tablas en el maestro, y vemos si funciona correctamente el sistema:
 
-![Captura 13](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/ERROR.png)
+![Captura 12](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/ERROR.png)
 
 No funciona correctamente, y por lo que indica el registro de error, no se ha realizado correctamente la creación del usuario 'esclavo'. Volvemos a repetir el proceso para su creación, modificando con los nuevos datos la información de la máquina esclava. Tras esto, el sistema funciona correctamente:
 
-![Captura 14](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/arreglado.png)
+![Captura 13](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/arreglado.png)
 
 Realizamos una comprobación final, introduciendo una nueva tupla en la máquina maestra y viendo como, efectivamente, se copia en la máquina esclava:
 
-![Captura 15](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/comprobacionFinal.png)
+![Captura 14](https://github.com/LuisSuall/swap1415/blob/master/Practicas/Practica5/Capturas/comprobacionFinal.png)
