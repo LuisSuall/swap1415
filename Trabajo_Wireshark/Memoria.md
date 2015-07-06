@@ -157,7 +157,7 @@ Además establecimos un par de claves pública-privada de modo que una máquina 
 
 En la siguiente captura podemos observar el intercambio de llaves al inicio de la conexión (señalado en verde) y también vemos como los tres primero paquetes de la traza se corresponden a las tres fases del Three-Way Handshake (señalado en azul):
 
-![Captura 11](https://github.com/LuisSuall/swap1415/blob/master/Trabajo_Wireshark/Capturas/P2TWHSyIntecambioLlaves.jpeg)
+![Captura 11](https://github.com/LuisSuall/swap1415/blob/master/Trabajo_Wireshark/Capturas/P2TWHSyIntercambioLlaves.jpeg)
 
 Ahora vamos a ver simplemente un segmento de la traza donde se ve el continuo envío de paquetes TCP entre ambas máquinas como producto de la sincronización:
 
@@ -219,7 +219,7 @@ Aquí tenemos la traza de la simulación:
 
 Como podemos ver nuestro servidor está enviando una gran cantidad de paquetes de `[SYN, ACK]`, además si hacemos doble click en los paquetes que está enviando el Host podemos ver cómo envía el FLAG SYN, iniciando la conexión TCP:
 
-![Captura 22](https://github.com/LuisSuall/swap1415/blob/master/Trabajo_Wireshark/Capturas/DDSYN.jpeg)
+![Captura 22](https://github.com/LuisSuall/swap1415/blob/master/Trabajo_Wireshark/Capturas/DDSSYN.jpeg)
 
 Pero tras recibir el ACK no envía el tercer mensaje necesario para completar el Three-way Handshake, dejando una conexión abierta y así sucesivamente. Además podemos ver esquemáticamente este envio de paquetes con una opción que nos ofrece WS, no tenemos más que seleccionar un paquete y luego seleccionar de la pestaña Statistics la opción Flow graph… la cual muestra el envio de mensajes de forma gráfica:
 
